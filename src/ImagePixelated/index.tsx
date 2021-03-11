@@ -13,7 +13,7 @@ export const ImagePixelated = ({
   src,
   width,
   height,
-  pixelSize = 1,
+  pixelSize = 5,
   centered,
   fillTransparencyColor
 }: ImagePixelatedProps) => {
@@ -32,15 +32,14 @@ export const ImagePixelated = ({
     src,
     width,
     height,
-    pixelSize = 1,
+    pixelSize,
     centered,
     fillTransparencyColor
   }: ImagePixelatedProps) => {
-    // create img that will be later painted into the canvas
     let img = new Image()
     img.crossOrigin = "anonymous"
     img.src = src
-    // once image is loaded..
+
     img.onload = () => {
       const canvas: HTMLCanvasElement = canvasRef?.current
       if (canvas) {
@@ -49,8 +48,7 @@ export const ImagePixelated = ({
         img.height = height ? height : img.height
         canvas.width = img.width
         canvas.height = img.height
-        // we paint the image into the canvas
-        // this is needed to get RGBA info out of each pixel
+
         ctx.drawImage(img, 0, 0, img.width, img.height)
         paintPixels(ctx, img, pixelSize, centered, fillTransparencyColor)
         img = undefined
@@ -78,10 +76,6 @@ export const ImagePixelated = ({
           }
 
           const rgba = ctx.getImageData(xColorPick, yColorPick, 1, 1).data
-          // TODO: add support for png transparent background
-          // need to create another canvas and duplicate process?
-          // one canvas to get the data from
-          // one to paint pixels into
           ctx.fillStyle =
             rgba[3] === 0
               ? fillTransparencyColor
