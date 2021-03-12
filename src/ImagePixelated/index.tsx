@@ -27,7 +27,7 @@ export const ImagePixelated = ({
       centered,
       fillTransparencyColor
     })
-  }, [src, width, pixelSize, centered, fillTransparencyColor])
+  }, [src, width, height, pixelSize, centered, fillTransparencyColor])
   const pixelate = ({
     src,
     width,

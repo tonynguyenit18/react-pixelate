@@ -1,4 +1,11 @@
-# React Pixelate
+
+<p align="center">
+  <a href="https://github.com/tonynguyenit18/react-pixelate#readme">
+    <img width="200" src="./logo.png">
+  </a>
+</p>
+
+<h1 align="center">React Pixelate</h1>
 
 This repo is to pixelate **Images** and **HTML Element** for React.
 
@@ -71,7 +78,4 @@ fillTransparencyColor| String | white                 | For images with transpar
 Property             | Type   |Default Value|Description                               |Required
 ---------------------|--------|-------------|------------------------------------------|--------
 children             |  JSX.Element | element inside body of ElementPixelated component | Element want to be pixelated                       |No
-width                | Int    | Original offsetWidth of children| Prop to override the original width| No
-height               | Int    | Original offsetHeight of children| Prop to override the original height| No
 pixelSize            | Int    | 5                     | Size of the pixel in the new pixelated element| No 
-centered             | Bool   | false                 | If true, the pixels grid will be centered vertically and horizontally. Example: You choose a pixelSize of 10, but your image width or height cant be divided by an exact grid of 10x10 pixels. Setting this prop as **true** will set an offset that keeps the grid centered | No 

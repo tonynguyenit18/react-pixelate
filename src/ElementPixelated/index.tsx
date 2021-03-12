@@ -14,20 +14,12 @@ const colors = [
 ]
 
 export type ElementPixelatedProps = {
-  width?: number
-  height?: number
   pixelSize?: number
-  centered?: boolean
-  fillTransparencyColor?: string
 }
 
 export const ElementPixelated = ({
   children,
-  width,
-  height,
-  pixelSize = 5,
-  centered,
-  fillTransparencyColor
+  pixelSize = 5
 }: ElementPixelatedProps & { children: JSX.Element }) => {
   const childNodeRef = useRef<HTMLDivElement>()
   const canvasRef = useRef<HTMLCanvasElement>()
@@ -35,14 +27,11 @@ export const ElementPixelated = ({
     const paintPixels = ({
       ctx,
       img,
-      pixelSize,
-      centered
+      pixelSize
     }: {
       ctx: CanvasRenderingContext2D
       img: HTMLImageElement
       pixelSize: number
-      centered: boolean
-      fillTransparencyColor: string
     }) => {
       if (!isNaN(pixelSize) && pixelSize > 0) {
         for (let x = 0; x < img.width + pixelSize; x += pixelSize) {
@@ -50,16 +39,7 @@ export const ElementPixelated = ({
             // Random color and paint it
             const colorIndex = Math.floor(Math.random() * 10)
             ctx.fillStyle = colors[colorIndex]
-            if (centered) {
-              ctx.fillRect(
-                Math.floor(x - (pixelSize - (img.width % pixelSize) / 2)),
-                Math.floor(y - (pixelSize - (img.height % pixelSize) / 2)),
-                pixelSize,
-                pixelSize
-              )
-            } else {
-              ctx.fillRect(x, y, pixelSize, pixelSize)
-            }
+            ctx.fillRect(x, y, pixelSize, pixelSize)
           }
         }
       }
@@ -72,19 +52,19 @@ export const ElementPixelated = ({
 
       const canvas = canvasRef.current
       const ctx = canvas.getContext("2d")
-      img.width = width ? width : img.width
-      img.height = height ? height : img.height
+      img.width = img.width
+      img.height = img.height
       canvas.width = img.width
       canvas.height = img.height
       // we paint the image into the canvas
       // this is needed to get RGBA info out of each pixel
       ctx.drawImage(img, 0, 0, img.width, img.height)
-      paintPixels({ ctx, img, pixelSize, centered, fillTransparencyColor })
+      paintPixels({ ctx, img, pixelSize })
       img = null
     }
 
     pixelate()
-  }, [width, pixelSize, centered, fillTransparencyColor])
+  }, [pixelSize])
 
   return (
     <div style={{ position: "relative" }} ref={childNodeRef}>
