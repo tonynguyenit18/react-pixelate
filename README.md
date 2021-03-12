@@ -22,7 +22,7 @@ yarn add react-pixelate
 ```
 
 ## Demo
-* Play with codesandbox:
+* Play with codesandbox: 
 [![Edit react-pixelate-example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-pixelate-example-w80ew?fontsize=14&hidenavigation=1&theme=dark)
 ## Usage
 
@@ -32,7 +32,7 @@ Import components
 import { ImagePixelated, ElementPixelated } from "react-pixelate"
 ```
 
-1. ImagePixelated Usage
+**1. ImagePixelated**
 
 ```jsx
 // Import image you want to pixelate
@@ -54,7 +54,7 @@ centered             | Bool   | false                 | If true, the pixels grid
 fillTransparencyColor| String | white                 | For images with transparency (e.g png image), you can set a value for the places where the image is transparent| No  
 
 
-2. ElementPixelated
+**2. ElementPixelated**
 
 ```jsx
 <div className="App">

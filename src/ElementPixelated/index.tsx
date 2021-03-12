@@ -44,7 +44,6 @@ export const ElementPixelated = ({
       centered: boolean
       fillTransparencyColor: string
     }) => {
-      console.log(img.width, img.height, pixelSize)
       if (!isNaN(pixelSize) && pixelSize > 0) {
         for (let x = 0; x < img.width + pixelSize; x += pixelSize) {
           for (let y = 0; y < img.height + pixelSize; y += pixelSize) {
@@ -67,7 +66,6 @@ export const ElementPixelated = ({
     }
     const pixelate = () => {
       const { offsetWidth, offsetHeight } = childNodeRef.current
-      console.log(offsetWidth, offsetHeight)
       // create img that will be later painted into the canvas
       let img = new Image(offsetWidth, offsetHeight)
       img.crossOrigin = "anonymous"
