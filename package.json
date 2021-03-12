@@ -2,6 +2,15 @@
   "name": "react-pixelate",
   "version": "1.0.0",
   "description": "React library to pixelate images or elements",
+  "title": "React Pixelate",
+  "keywords": [
+    "react",
+    "react-component",
+    "pixel",
+    "pixelate",
+    "react-pixelate",
+    "blur element"
+  ],
   "main": "build/index.js",
   "scripts": {
     "build": "rollup -c",
@@ -10,6 +19,14 @@
     "test": "jest --coverage"
   },
   "author": "Tony Nguyen tonynguyenit18@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tonynguyenit18/react-pixelate"
+  },
+  "homepage": "https://github.com/tonynguyenit18/react-pixelate#readme",
+  "bugs": {
+    "url": "https://github.com/tonynguyenit18/react-pixelate/issues"
+  },
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^26.0.13",
