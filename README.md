@@ -29,6 +29,7 @@ yarn add react-pixelate
 ```
 
 ## Demo
+* Demo page: [React Pixelate Demo](https://tonynguyenit18.github.io/react-pixelate-demo/)
 * Play with codesandbox: 
 [![Edit react-pixelate-example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-pixelate-example-w80ew?fontsize=14&hidenavigation=1&theme=dark)
 ## Usage
