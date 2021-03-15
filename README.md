@@ -1,4 +1,6 @@
 
+[![npm version](https://badge.fury.io/js/react-pixelate.svg)](https://badge.fury.io/js/react-pixelate)
+
 <p align="center">
   <a href="https://github.com/tonynguyenit18/react-pixelate#readme">
     <img width="200" src="./logo.png">
